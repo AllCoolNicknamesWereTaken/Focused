@@ -34,9 +34,9 @@ body {
   text-align: center;
   align-items: center;
   font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-
-
+  font-family: 'Lobster', cursive;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Amatic SC', cursive;
 }
 .Logowanie {
   margin-top: 3%;
@@ -75,4 +75,5 @@ body {
 }
 .footerObj {
   display: inline;
+
 }
