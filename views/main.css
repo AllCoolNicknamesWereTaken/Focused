@@ -1,0 +1,40 @@
+.belt {
+  background-color: #36859B;
+  width: 100%;
+  height: 8vh;
+  border-radius: 30px;
+  text-align: center;
+  /*text-align-last: center;*/
+}
+body {
+  background-color: #C5DDE4
+}
+.headings {
+    /*margin: auto;*/
+    color: #FFFFFF;
+    font-size: 8vh;
+    /*margin-top: -5px;*/
+    line-height: 7vh;
+    font-family: 'Lobster', cursive;
+}
+.helper {
+  /*display: inline-block;
+  width: calc(50% - 84px);*/
+  margin:auto;
+  margin-top: 3%;
+}
+form {
+  display: inline-block;
+  width: 167px;
+
+}
+body {
+  text-align: center;
+
+}
+.Logowanie {
+  margin-top: 3%;
+  margin-left: -4%;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+}
