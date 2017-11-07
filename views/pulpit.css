@@ -1,0 +1,29 @@
+.belt {
+  height: 6vh;
+}
+
+.headings {
+    font-size: 5vh;
+    line-height: 6vh;
+}
+
+.button2:hover {
+  background-color: #B9B2AC;
+}
+
+.button2 {
+    width: 140px;
+    border-color: #9F9993;
+    background-color: #9F9993;
+    color: white;
+    float:right;
+    font-size: 4vh;
+    margin-top: 0.3%;
+    margin-right: 0.3%;
+    padding: 0;
+    width: auto;
+}
+
+.button2:active {
+  background-color: #7D7772;
+}
