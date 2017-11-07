@@ -15,7 +15,7 @@ body {
     font-size: 9vh;
     /*margin-top: -5px;*/
     line-height: 10vh;
-    font-family: 'Lobster', cursive;
+    /*font-family: 'Lobster', cursive;*/
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
 }
@@ -34,9 +34,10 @@ body {
   text-align: center;
   align-items: center;
   font-weight: bold;
-  font-family: 'Lobster', cursive;
-  font-family: 'Dancing Script', cursive;
+  /*font-family: 'Lobster', cursive;*/
+  /*font-family: 'Dancing Script', cursive;*/
   font-family: 'Amatic SC', cursive;
+
 }
 .Logowanie {
   margin-top: 3%;
@@ -53,19 +54,37 @@ body {
   border-radius: 10px;
   font-size: 20px;
   margin-top: 1%;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  user-select: none;
 }
 
+.button1:hover{
+  background-color: #5399AD;
+}
 .button1 {
   width: 70px;
   border-color: #36859B;
-  background-color: #36859B;
+  background: #36859B;
 }
-
+.button1:active {
+  background-color: #2A4B54;
+  transition: background-color 0s;
+}
+.button2:hover {
+  background-color: #FFC68E;
+}
 .button2 {
     width: 140px;
     border-color: #9F9993;
     background-color: #FFB974;
 }
+.button2:active {
+  background-color: #8D765F;
+  transition: background-color 0.0s;
+}
+
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -75,5 +94,9 @@ body {
 }
 .footerObj {
   display: inline;
+  margin: 3vh;
+  /*width: 140px;*/
+
+  /*margin-top: 2vh;*/
 
 }
