@@ -12,14 +12,13 @@
 }
 
 .button2 {
-    width: 140px;
     border-color: #9F9993;
     background-color: #9F9993;
     color: white;
     float:right;
-    font-size: 4vh;
+    font-size: 18px;
     margin-top: 0.3%;
-    margin-right: 0.3%;
+    margin-right: 9%;
     padding: 0;
     width: auto;
 }

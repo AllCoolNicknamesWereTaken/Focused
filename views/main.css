@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #C5DDE4
+  background-color: #C5DDE4;
 }
 
 .headings {
@@ -95,4 +95,35 @@ body {
 .footerObj {
   display: inline;
   margin: 3vh;
+}
+
+nav ol {
+/*background: #FFB974;*/
+list-style: none;
+padding: 0;
+width: 200px;
+border-radius: 10px;
+  /*border: solid #C5DDE4 6px;*/
+
+}
+nav ol li {
+  background: #FFB974;
+  border: solid #C5DDE4 6px;
+border-radius: 10px;
+padding: 4px;
+}
+nav ul li:last-child {
+  border-radius: 10px;
+  border: solid #C5DDE4 6px;
+}
+nav ol li a {
+color: black;
+text-decoration: none;
+}
+nav ol li a:hover {
+text-decoration: underline;
+}
+
+.Rozwijalne {
+  margin-left: 50px;
 }
