@@ -55,7 +55,7 @@ body {
   user-select: none;
 }
 
-.button1:hover{
+.button1:hover {
   background-color: #5399AD;
 }
 
@@ -99,31 +99,63 @@ body {
 
 nav ol {
 /*background: #FFB974;*/
-list-style: none;
-padding: 0;
-width: 200px;
-border-radius: 10px;
+  list-style: none;
+  padding: 0;
+  width: 10%;
+  border-radius: 10px;
   /*border: solid #C5DDE4 6px;*/
+  font-size: 4vh;
 
 }
-nav ol li {
+.Kalendarz, .Base, .Szukaj {  cursor: pointer;
   background: #FFB974;
-  border: solid #C5DDE4 6px;
-border-radius: 10px;
-padding: 4px;
+  border: solid #C5DDE4 4px;
+  border-radius: 10px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.Kalendarz:hover, .Base:hover, .Szukaj:hover {
+  background: #FFC68E;
+  /*border: solid #C5DDE4 6px;*/
+  border-radius: 10px;
+  padding: 4px;
+}
+
+ol > li > ul {
+  list-style-type:none;
+  padding:0;
+  margin:0;
 }
 nav ul li:last-child {
-  border-radius: 10px;
-  border: solid #C5DDE4 6px;
+  border: solid FFB974 6px;
 }
+
 nav ol li a {
 color: black;
 text-decoration: none;
 }
+
 nav ol li a:hover {
 text-decoration: underline;
 }
 
+.Rozwijalne:hover {
+    background-color: #B9B2AC;
+}
+
 .Rozwijalne {
-  margin-left: 50px;
+  margin-left: 10px;
+  background-color: #9F9993;
+  border-radius: 10px;
+  margin : 2px;
+  cursor: pointer;
+}
+
+.RozwijalnePar {
+  display:none;
+}
+
+ol > li:hover > ul {
+  display:block;
 }
