@@ -34,20 +34,25 @@
   width: 200px;
   height: 200px;
   border : solid black 3px;
-  flex-grow: 7
+  flex-grow: 17
 
 }
 
 .main-container {
 display: flex;
 flex-direction: row;
+margin:auto;
+margin-top: 0.3%;
 }
-.side-menu .button2 {
-  flex-grow::5
+.side-menu {
+  flex-grow:5
 }
+
+
 .left-side{
   width:20%;
   display: flex;
   text-align: left;
+  flex-grow:1
 
 }

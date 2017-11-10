@@ -97,7 +97,7 @@ body {
   margin: 3vh;
 }
  nav {
-   width: 50vh;
+   width: 100%;
  }
 nav ol {
 /*background: #FFB974;*/
@@ -128,7 +128,7 @@ ol > li > ul {
   list-style-type:none;
   padding:0;
   margin:0;
-  width: clac( auto + 5vh);
+  /*width: clac( auto + 5vh);*/
 }
 nav ul li:last-child {
   border: solid FFB974 6px;
