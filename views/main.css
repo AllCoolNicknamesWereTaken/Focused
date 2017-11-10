@@ -96,12 +96,14 @@ body {
   display: inline;
   margin: 3vh;
 }
-
+ nav {
+   width: 50vh;
+ }
 nav ol {
 /*background: #FFB974;*/
   list-style: none;
   padding: 0;
-  width: 10%;
+  width: 100%;
   border-radius: 10px;
   /*border: solid #C5DDE4 6px;*/
   font-size: 4vh;
@@ -126,6 +128,7 @@ ol > li > ul {
   list-style-type:none;
   padding:0;
   margin:0;
+  width: clac( auto + 5vh);
 }
 nav ul li:last-child {
   border: solid FFB974 6px;

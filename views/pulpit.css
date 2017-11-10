@@ -15,12 +15,14 @@
     border-color: #9F9993;
     background-color: #9F9993;
     color: white;
-    float:right;
+    float:left;
+    /*text-align: center;*/
     font-size: 18px;
-    margin-top: 0.3%;
-    margin-right: 9%;
+    /*margin-top: 0.3%;*/
+    /*margin-right: 9%;*/
     padding: 0;
-    width: auto;
+    width: 30%;
+    margin-left: 1%;
 }
 
 .button2:active {
@@ -28,18 +30,24 @@
 }
 
 .calendar {
-  position: absolute;
+
   width: 200px;
   height: 200px;
   border : solid black 3px;
-  /*right: 50%*/
-  /*left: 50% ;*/
-  /*transform: translateX(-50%);*/
-  /*margin-top: -20vh;*/
+  flex-grow: 7
 
 }
 
-.line {
-  width: calc(91% - 59px);
-  float :left;
+.main-container {
+display: flex;
+flex-direction: row;
+}
+.side-menu .button2 {
+  flex-grow::5
+}
+.left-side{
+  width:20%;
+  display: flex;
+  text-align: left;
+
 }
