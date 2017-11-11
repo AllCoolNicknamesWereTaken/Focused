@@ -43,16 +43,30 @@ display: flex;
 flex-direction: row;
 margin:auto;
 margin-top: 0.3%;
+justify-content: space-between;
 }
 .side-menu {
-  flex-grow:5
+  flex-grow:3
 }
 
 
-.left-side{
-  width:20%;
-  display: flex;
-  text-align: left;
-  flex-grow:1
+.right-side{
 
+  display: flex;
+  /*text-align: left;*/
+  flex-grow:3
+
+}
+@media all and (min-width: 600px) {
+  /* We tell both sidebars to share a row */
+  /*.side-menu { flex: 1 auto; }*/
+  /*.right-side  { flex: 1 auto; }*/
+}
+
+@media all and (min-width: 800px) {
+  .main-container    { flex: 3 0px; }
+  .side-menu { order: 1; }
+  .calendar   { order: 2; }
+  .right-side { order: 3; }
+  .footer  { order: 4; }
 }

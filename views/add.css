@@ -1,0 +1,29 @@
+
+
+.main-class {
+  display: flex;
+  justify-content:center;
+}
+
+.des-class {
+  opacity: 1;
+  width: 50%;
+  height: 50%;
+  border: solid #C5DDE4 4px;
+  border-radius: 10px;
+  background-color: #C5DDE4;
+  align-self: center;
+}
+
+.all {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(200,200,200,0.3);
+  /*opacity: 0.2;*/
+  margin: 0;
+  align-content: center;
+}
+
+body{
+  background-color: white;
+}
