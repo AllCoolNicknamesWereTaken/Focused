@@ -8,6 +8,10 @@
 
 body {
   background-color: #C5DDE4;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    font-family: 'Amatic SC', cursive;
 }
 
 .headings {
@@ -16,4 +20,9 @@ body {
     line-height: 10vh;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
+}
+
+.helper {
+  margin:auto;
+  margin-top: 5%;
 }

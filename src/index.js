@@ -61,9 +61,7 @@ function Head(props) {
   );
 };
 
-
-
-  function Belt(props) {
+function Belt(props) {
     return (
       <div class='belt'>
           <div class ='headings'>
@@ -73,12 +71,26 @@ function Head(props) {
       );
   };
 
+function Form() {
+  return (
+    <div class='helper'>
+      <form>
+        <input type="email" id="user-email" name="user-email" placeholder="Email" />
+        <br />
+        <br />
+        <input type="password" name="psw" id="password" placeholder="Hasło" />
+      </form>
+    </div>
+  );
+};
+
 class App extends React.Component {
   render() {
     return (
       <div>
         <Head />
         <Belt />
+        <Form />
       </div>
     );
   }
