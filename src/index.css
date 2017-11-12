@@ -1,0 +1,19 @@
+.belt {
+  background-color: #36859B;
+  width: 100%;
+  height: 10vh;
+  border-radius: 30px;
+  text-align: center;
+}
+
+body {
+  background-color: #C5DDE4;
+}
+
+.headings {
+    color: #FFFFFF;
+    font-size: 9vh;
+    line-height: 10vh;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}

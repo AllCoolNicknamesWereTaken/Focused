@@ -21,7 +21,8 @@
   "homepage": "https://github.com/AllCoolNicknamesWereTaken/Focused#readme",
   "dependencies": {
     "react": "^16.1.0",
-    "react-dom": "^16.1.0"
+    "react-dom": "^16.1.0",
+    "react-helmet": "^5.2.0"
   },
   "devDependencies": {
     "react-scripts": "^1.0.17"
