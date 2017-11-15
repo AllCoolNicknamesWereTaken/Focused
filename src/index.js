@@ -83,6 +83,19 @@ function Form() {
     </div>
   );
 };
+function Button(pro) {
+  return (
+    <div>
+      <div class="button1">
+        zaloguj
+      </div>
+        <div class="button2">
+        zarejestruj sie
+      </div>
+    </div>
+  );
+
+};
 
 class App extends React.Component {
   render() {
@@ -91,6 +104,7 @@ class App extends React.Component {
         <Head />
         <Belt />
         <Form />
+        <Button />
       </div>
     );
   }
