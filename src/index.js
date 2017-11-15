@@ -16,8 +16,7 @@ function LoginPage() {
     <div>
       <Form />
       <Button text="zaloguj" class="button1" />
-      <Button text="Zarejestruj się" class="button2" />
-      <a href="#main">MAIN</a>
+      <Button text="Zarejestruj się" class="button2" link="#main" />
     </div>
   )
 }

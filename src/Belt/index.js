@@ -3,8 +3,8 @@ import './style.css';
 
 export function Belt(props) {
   return (
-    <div class='belt'>
-        <div class ='headings'>
+    <div className='belt'>
+        <div className ='headings'>
           Focused
         </div>
       </div>

@@ -3,14 +3,14 @@ import './style.css';
 
 export function Footer(props) {
   return (
-    <div class="footer">
-      <div class="footerObj">
+    <div className="footer">
+      <div className="footerObj">
         MÓJ GITHUB
       </div>
-      <div class="footerObj">
+      <div className="footerObj">
         REPOZYTORIUM FOCUSED
       </div>
-      <div class="footerObj">
+      <div className="footerObj">
         oliwia_bar@wp.pl
       </div>
     </div>

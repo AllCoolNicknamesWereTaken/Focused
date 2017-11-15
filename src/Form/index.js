@@ -3,7 +3,7 @@ import './style.css';
 
 export function Form() {
   return (
-    <div class='helper'>
+    <div className='helper'>
       <form>
         <input type="email" id="user-email" name="user-email" placeholder="Email" />
         <br />
