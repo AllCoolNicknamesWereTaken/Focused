@@ -9,8 +9,13 @@
   cursor: pointer;
   transition: background-color 0.3s;
   user-select: none;
-}
+  text-decoration: none;
 
+}
+.a {
+  text-decoration: none;
+  outline: none;
+}
 .button1:hover {
   background-color: #5399AD;
 }

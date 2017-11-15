@@ -9,14 +9,23 @@ import {Footer} from './Footer';
 import {Head} from './Head';
 import {Button} from './Button';
 import {Form} from './Form';
-
+import {RegForm} from './RegForm';
 
 function LoginPage() {
   return (
     <div>
       <Form />
-      <Button text="zaloguj" class="button1" />
-      <Button text="Zarejestruj się" class="button2" link="#main" />
+      <Button text="zaloguj" class="button1" link="#main" />
+      <Button text="Zarejestruj się" class="button2" link="#registration" />
+    </div>
+  )
+}
+
+function Registration() {
+  return (
+    <div>
+      <RegForm />
+      <Button text="Zarejestruj się" class="button2" link="#registration" />
     </div>
   )
 }
@@ -47,13 +56,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Head />
+        <Head title={"Focused" + this.state.active_page} />
         <Belt />
         {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
           <div>MAIN PAGE <a href="#login">LOGIN</a></div> :
-          <div>Inna</div>
+          this.state.active_page === 'registration'? <Registration /> :
+          <div>404 /n page not found</div>
         }
         <Footer />
       </div>
