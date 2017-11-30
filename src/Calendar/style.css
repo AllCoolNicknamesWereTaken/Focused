@@ -1,0 +1,8 @@
+.calendar {
+
+  width: 200px;
+  height: 200px;
+  border : solid black 3px;
+  flex-grow: 17
+
+}

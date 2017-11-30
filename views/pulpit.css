@@ -57,16 +57,12 @@ justify-content: space-between;
   flex-grow:3
 
 }
-@media all and (min-width: 600px) {
-  /* We tell both sidebars to share a row */
-  /*.side-menu { flex: 1 auto; }*/
-  /*.right-side  { flex: 1 auto; }*/
-}
 
-@media all and (min-width: 800px) {
+
+/*@media all and (min-width: 800px) {
   .main-container    { flex: 3 0px; }
   .side-menu { order: 1; }
   .calendar   { order: 2; }
   .right-side { order: 3; }
   .footer  { order: 4; }
-}
+}*/

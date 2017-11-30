@@ -1,0 +1,77 @@
+.belt {
+  height: 6vh;
+}
+.headings {
+    font-size: 5vh;
+    line-height: 6vh;
+}
+
+.side-menu {
+  flex-grow:3
+}
+nav {
+  width: 100%;
+}
+nav ol {
+/*background: #FFB974;*/
+ list-style: none;
+ padding: 0;
+ width: 100%;
+ border-radius: 10px;
+ /*border: solid #C5DDE4 6px;*/
+ font-size: 4vh;
+
+}
+.Kalendarz, .Base, .Szukaj {  cursor: pointer;
+ background: #FFB974;
+ border: solid #C5DDE4 4px;
+ border-radius: 10px;
+ padding: 4px;
+ cursor: pointer;
+}
+
+.Kalendarz:hover, .Base:hover, .Szukaj:hover {
+ background: #FFC68E;
+ /*border: solid #C5DDE4 6px;*/
+ border-radius: 10px;
+ padding: 4px;
+}
+
+ol > li > ul {
+ list-style-type:none;
+ padding:0;
+ margin:0;
+ /*width: clac( auto + 5vh);*/
+}
+nav ul li:last-child {
+ border: solid FFB974 6px;
+}
+
+nav ol li a {
+color: black;
+text-decoration: none;
+}
+
+nav ol li a:hover {
+text-decoration: underline;
+}
+
+.Rozwijalne:hover {
+   background-color: #B9B2AC;
+}
+
+.Rozwijalne {
+ margin-left: 10px;
+ background-color: #9F9993;
+ border-radius: 10px;
+ margin : 2px;
+ cursor: pointer;
+}
+
+.RozwijalnePar {
+ display:none;
+}
+
+ol > li:hover > ul {
+ display:block;
+}

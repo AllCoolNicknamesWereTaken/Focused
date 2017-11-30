@@ -62,3 +62,27 @@ body {
   transition: background-color 0.0s;
   background-color: #8D765F;
 }
+.main-container {
+display: flex;
+flex-direction: row;
+margin:auto;
+margin-top: 0.3%;
+justify-content: space-between;
+}
+
+.side-menu {
+  flex-grow:3
+}
+
+
+.right-side{
+
+  display: flex;
+  /*text-align: left;*/
+  flex-grow:3
+
+}
+
+@media all and (min-width: 800px) {
+
+}

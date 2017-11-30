@@ -10,13 +10,16 @@ import {Head} from './Head';
 import {Button} from './Button';
 import {Form} from './Form';
 import {RegForm} from './RegForm';
+import {Menu} from './Menu';
+import {Calendar} from './Calendar';
+import {Wyloguj} from './Wyloguj';
 
 function LoginPage() {
   return (
     <div>
       <Form />
       <Button text="zaloguj" class="button1" link="#main" />
-      <Button text="Zarejestruj się" class="button2" link="#registration" />
+      <Button text="Zarejestruj sie" class="button2" link="#registration" />
     </div>
   )
 }
@@ -25,10 +28,23 @@ function Registration() {
   return (
     <div>
       <RegForm />
-      <Button text="Zarejestruj się" class="button2" link="#registration" />
+      <Button text="Zarejestruj sie" class="button2" link="#registration" />
     </div>
   )
 }
+
+function Mainpage() {
+  return (
+    <div className="main-container">
+      <Menu />
+      <Calendar />
+      <div className="right-side">
+        <Button text="Wyloguj" class="wyloguj"/>
+      </div>
+    </div>
+  )
+}
+
 
 
 class App extends React.Component {
@@ -49,19 +65,19 @@ class App extends React.Component {
 
   onHashChange() {
     this.setState({
-      active_page: window.location.hash.toString().slice(1)
+      active_page: window.location.hash ? window.location.hash.toString().slice(1) : this.state.active_page
     });
   }
 
   render() {
     return (
       <div>
-        <Head title={"Focused" + this.state.active_page} />
+        <Head title={"Focused " + this.state.active_page} />
         <Belt />
         {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
-          <div>MAIN PAGE <a href="#login">LOGIN</a></div> :
+          <Mainpage /> :
           this.state.active_page === 'registration'? <Registration /> :
           <div>404 /n page not found</div>
         }
