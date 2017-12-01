@@ -1,7 +1,15 @@
+
 import React from 'react';
 import './style.css';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import BigCalendar from 'react-big-calendar';
+import moment from 'moment';
+
 
 const api_url = '/events.json';
+
+  BigCalendar.momentLocalizer(moment)
+
 
 export class Calendar extends React.Component {
 
@@ -31,12 +39,14 @@ export class Calendar extends React.Component {
 
   render() {
     return (
-      <div className="calendar">
-           Kalendarz:
-           {this.state.events.map(function(event){
-             return <div>{event.name}, {event.id}</div>
-           })}
-      </div>
+        <div className="CalendarContainer">
+          <BigCalendar
+            events={[]}
+            startAccessor='startDate'
+            endAccessor='endDate'
+          />
+        </div>
+
     );
   }
 };

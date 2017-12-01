@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/AllCoolNicknamesWereTaken/Focused#readme",
   "dependencies": {
+    "moment": "^2.19.3",
     "react": "^16.1.0",
+    "react-big-calendar": "^0.17.0",
     "react-dom": "^16.1.0",
     "react-helmet": "^5.2.0"
   },

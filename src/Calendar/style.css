@@ -3,6 +3,13 @@
   width: 200px;
   height: 200px;
   border : solid black 3px;
-  flex-grow: 17
+  flex-grow: 17;
+  flex: 5;
+  height: 80vh;
 
+}
+.CalendarContainer {
+  flex: 5;
+  height: 80vh;
+  padding: 15px;
 }

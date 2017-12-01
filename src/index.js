@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Helmet} from "react-helmet";
-
 import {Belt} from './Belt';
 import {Footer} from './Footer';
 import {Head} from './Head';
@@ -13,12 +12,16 @@ import {RegForm} from './RegForm';
 import {Menu} from './Menu';
 import {Calendar} from './Calendar';
 import {Wyloguj} from './Wyloguj';
+import {Add} from './Add';
+
+
 
 function LoginPage() {
   return (
     <div>
       <Form />
-      <Button text="zaloguj" class="button1" link="#main" />
+      <Button text="zaloguj" cla    startAccessor='start'
+    endAccessor='end'ss="button1" link="#main" />
       <Button text="Zarejestruj sie" class="button2" link="#registration" />
     </div>
   )
@@ -33,18 +36,40 @@ function Registration() {
   )
 }
 
+// BigCalendar.setLocalizer(
+
+// );
+
 function Mainpage() {
   return (
     <div className="main-container">
       <Menu />
       <Calendar />
       <div className="right-side">
-        <Button text="Wyloguj" class="wyloguj"/>
+        <Button text="Wyloguj" class="wyloguj" link="#add" />
       </div>
     </div>
   )
 }
 
+
+
+// function NoteBase() {
+//   return (
+//     // );
+// }
+function AddEvent() {
+  return (
+    <div>
+
+      <Mainpage />
+
+      <Add />
+      <Button text="OK" />
+    </div>
+
+  )
+}
 
 
 class App extends React.Component {
@@ -78,7 +103,7 @@ class App extends React.Component {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
           <Mainpage /> :
-          this.state.active_page === 'registration'? <Registration /> :
+          this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'? <AddEvent />:
           <div>404 /n page not found</div>
         }
         <Footer />

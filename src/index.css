@@ -1,3 +1,7 @@
+.under {
+  position: relative;
+  z-index: 1
+}
 
 body {
   background-color: #C5DDE4;
@@ -70,16 +74,14 @@ margin-top: 0.3%;
 justify-content: space-between;
 }
 
-.side-menu {
-  flex-grow:3
-}
+
 
 
 .right-side{
 
   display: flex;
   /*text-align: left;*/
-  flex-grow:3
+  flex-grow:1
 
 }
 

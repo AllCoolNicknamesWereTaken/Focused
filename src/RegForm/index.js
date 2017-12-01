@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 
 export function RegForm(props) {
   return (
-    <div class='helper'>
+    <div className='helper'>
       <form>
         <input type="text" id="user-name" name="text" placeholder="Nazwa użytkownika" />
         <br />

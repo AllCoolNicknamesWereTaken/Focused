@@ -7,25 +7,25 @@ export function Menu() {
 <div className="side-menu">
   <nav >
     <ol>
-        <li class="Kalendarz">
+        <li className="Kalendarz">
           <a href="index.html">Kalendarz</a>
         </li>
         <li class="Base">
           <a href="szkolenia.html">Moje bazy danych</a>
-            <ul class="RozwijalnePar">
-              <li class="Rozwijalne">
-                <a class="White">Notatki_1</a>
+            <ul className="RozwijalnePar">
+              <li className="Rozwijalne">
+                <a className="White">Notatki_1</a>
               </li>
-              <li class="Rozwijalne">
-                <a class="White">Notatki_2</a>
+              <li className="Rozwijalne">
+                <a className="White">Notatki_2</a>
               </li>
             </ul>
         </li>
-        <li class="Szukaj">
+        <li className="Szukaj">
               <a href="konferencje.html">Szukaj</a>
-              <ul class="RozwijalnePar">
-                <li class="Rozwijalne">
-                  <a class="White">Notatki_1</a>
+              <ul className="RozwijalnePar">
+                <li className="Rozwijalne">
+                  <a className="White">Notatki_1</a>
                 </li>
               </ul>
             </li>
