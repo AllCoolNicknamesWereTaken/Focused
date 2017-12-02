@@ -29,8 +29,16 @@ export function Add(props) {
             <div class="stars">
             </div>
           </div>
+          <div className = 'button1'>
+            <a href = "#main" className='a'>
+              <div>
+                OK
+                </div>
+              </a>
+          </div>
         </div>
-      </div>
+        </div>
+
     </div>
     );
 };

@@ -20,8 +20,7 @@ function LoginPage() {
   return (
     <div>
       <Form />
-      <Button text="zaloguj" cla    startAccessor='start'
-    endAccessor='end'ss="button1" link="#main" />
+      <Button text="zaloguj" class="button1" link="#main" />
       <Button text="Zarejestruj sie" class="button2" link="#registration" />
     </div>
   )
@@ -63,9 +62,7 @@ function AddEvent() {
     <div>
 
       <Mainpage />
-
       <Add />
-      <Button text="OK" />
     </div>
 
   )

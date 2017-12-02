@@ -27,12 +27,17 @@ export class Calendar extends React.Component {
       return dupa.json();
     })
     .then(function(data_z_jsonem) {
-      if(data_z_jsonem.status !== "ok"){
+      if(data_z_jsonem.status !== "ok") {
         console.error("błąd danych");
         return;
       }
+
       self.setState({
-        events: data_z_jsonem.data
+        events: data_z_jsonem.data.map(function(event) {
+          event.start = new Date(event.start);
+          event.end = new Date(event.end);
+          return event;
+        })
       });
     });
   }
@@ -41,9 +46,7 @@ export class Calendar extends React.Component {
     return (
         <div className="CalendarContainer">
           <BigCalendar
-            events={[]}
-            startAccessor='startDate'
-            endAccessor='endDate'
+            events={this.state.events}
           />
         </div>
 
