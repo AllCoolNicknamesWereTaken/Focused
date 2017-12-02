@@ -7,7 +7,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node srv"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
   },
   "homepage": "https://github.com/AllCoolNicknamesWereTaken/Focused#readme",
   "dependencies": {
+    "hapi": "^15.1.1",
     "moment": "^2.19.3",
+    "mysql": "^2.15.0",
     "react": "^16.1.0",
     "react-big-calendar": "^0.17.0",
     "react-dom": "^16.1.0",

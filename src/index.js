@@ -45,7 +45,8 @@ function Mainpage() {
       <Menu />
       <Calendar />
       <div className="right-side">
-        <Button text="Wyloguj" class="wyloguj" link="#add" />
+        <Button text="Wyloguj" class="wyloguj" link="#login" />
+        <Button text="Dodaj wydarzenie" class="button1" link="#add" />
       </div>
     </div>
   )
@@ -96,6 +97,7 @@ class App extends React.Component {
       <div>
         <Head title={"Focused " + this.state.active_page} />
         <Belt />
+        <div className="AllMainContainer">
         {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
@@ -103,6 +105,7 @@ class App extends React.Component {
           this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'? <AddEvent />:
           <div>404 /n page not found</div>
         }
+        </div>
         <Footer />
       </div>
     );

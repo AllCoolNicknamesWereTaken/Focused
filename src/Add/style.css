@@ -18,6 +18,11 @@
 
 
 }
+.time {
+    display: flex;
+      justify-content:center;
+      padding: 1vh;
+}
 
 .all {
   width: 100vw;

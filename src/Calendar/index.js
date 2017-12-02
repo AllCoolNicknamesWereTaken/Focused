@@ -22,6 +22,7 @@ export class Calendar extends React.Component {
 
   componentWillMount() {
     var self = this;
+    console.log("dupa");
     fetch(api_url)
     .then(function(dupa) {
       return dupa.json();
