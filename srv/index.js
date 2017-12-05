@@ -11,7 +11,9 @@ var db = DB.createConnection({
 
 });
 db.connect();
+
 var routes = [{
+  method: "GET",
   path: "/events",
   handler: function(request, reply) {
     db.query("SELECT * FROM events", function(err, results) {
@@ -32,15 +34,47 @@ var routes = [{
     // });
   }
 }, {
+  method: "GET",
   path: "/oliwka",
   handler: function(request, reply) {
     reply({
       title: 'KOCHAM Cie'
     })
   }
-}];
+}, {
+    method: "POST",
+    path: "/addevents",
+    handler: function(request, reply) {
+      var query = "INSERT INTO events (`title`, `start`, `end`, `desc`) VALUES ('"
+      + JSON.parse(request.payload).title + "', '"
+      + JSON.parse(request.payload).start + "', '"
+      + JSON.parse(request.payload).end + "', '"
+      + JSON.parse(request.payload).desc
+      + "')";
+      console.log(query);
+      db.query(query, function(err, results) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        reply({
+          status: 'ok'
+        })
+      });
+  }
+}
+];
 
-var server = new Hapi.Server();
+var server = new Hapi.Server({
+  connections: {
+    routes: {
+      cors: {
+        credentials: true
+      }
+    }
+  }
+});
+
 server.connection({
   host: "localhost",
   port: 8080,
@@ -48,7 +82,7 @@ server.connection({
 
 routes.forEach(function(route) {
   server.route({
-    method: "GET",
+    method: route.method,
     path: route.path,
     config: {
       handler: route.handler
