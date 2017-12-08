@@ -42,12 +42,17 @@ export class Calendar extends React.Component {
       });
     });
   }
-
+  eventOnClicked() {
+    window.location.hash = "#add";
+  }
   render() {
     return (
         <div className="CalendarContainer">
           <BigCalendar
             events={this.state.events}
+            selectable={true}
+            onSelectSlot={()=> { alert('yo') }}
+            onSelectEvent={this.eventOnClicked}
           />
         </div>
 
