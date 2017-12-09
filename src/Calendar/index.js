@@ -13,11 +13,12 @@ const api_url = 'http://localhost:8080/events';
 
 export class Calendar extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       events: []
     };
+    this.addEvent = this.addEvent.bind(this);
   }
 
   componentWillMount() {
@@ -42,8 +43,9 @@ export class Calendar extends React.Component {
       });
     });
   }
-  eventOnClicked() {
+  addEvent(slotInfo) {
     window.location.hash = "#add";
+    this.props.setDate(slotInfo.start, slotInfo.end);
   }
   render() {
     return (
@@ -51,7 +53,7 @@ export class Calendar extends React.Component {
           <BigCalendar
             events={this.state.events}
             selectable={true}
-            onSelectSlot={()=> { alert('yo') }}
+            onSelectSlot= {this.addEvent}
             onSelectEvent={this.eventOnClicked}
           />
         </div>

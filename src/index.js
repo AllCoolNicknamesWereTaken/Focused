@@ -39,17 +39,22 @@ function Registration() {
 
 // );
 
-function Mainpage() {
-  return (
-    <div className="main-container">
-      <Menu />
-      <Calendar />
-      <div className="right-side">
-        <Button text="Wyloguj" class="wyloguj" link="#login" />
-        <Button text="Dodaj wydarzenie" class="button1" link="#add" />
+class Mainpage extends React.Component {
+
+
+
+  render() {
+    return (
+      <div className="main-container">
+        <Menu />
+        <Calendar setDate={this.props.setDate} />
+        <div className="right-side">
+          <Button text="Wyloguj" class="wyloguj" link="#login" />
+          <Button text="Dodaj wydarzenie" class="button1" link="#add" />
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 
@@ -58,12 +63,12 @@ function Mainpage() {
 //   return (
 //     // );
 // }
-function AddEvent() {
+function AddEvent(props) {
   return (
     <div>
 
       <Mainpage />
-      <Add />
+      <Add start={props.start} end={props.end} />
     </div>
 
   )
@@ -73,13 +78,23 @@ function AddEvent() {
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      active_page: 'login'
-    }
+      active_page: 'login',
+      start: new Date(),
+      end: new Date(),
+    };
+
+    this.setDate = this.setDate.bind(this);
+
 
     window.addEventListener('hashchange', this.onHashChange.bind(this));
 
+  }
+  setDate(start, end) {
+    this.setState({
+      start: start,
+      end: end
+    })
   }
 
   componentDidMount() {
@@ -87,9 +102,9 @@ class App extends React.Component {
   }
 
   onHashChange() {
-    this.setState({
-      active_page: window.location.hash ? window.location.hash.toString().slice(1) : this.state.active_page
-    });
+    const state = this.state;
+    state.active_page = window.location.hash ? window.location.hash.toString().slice(1) : this.state.active_page;
+    this.setState(state);
   }
 
   render() {
@@ -101,8 +116,8 @@ class App extends React.Component {
         {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
-          <Mainpage /> :
-          this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'? <AddEvent />:
+          <Mainpage setDate={this.setDate} /> :
+          this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'? <AddEvent start={this.state.start} end={this.state.end} />:
           <div>404 /n page not found</div>
         }
         </div>

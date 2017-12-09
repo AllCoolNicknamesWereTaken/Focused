@@ -1,14 +1,17 @@
 import React from 'react';
 import './style.css';
 
+import moment from 'moment';
+
 export class Add extends React.Component {
       constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
           startTime: '',
-          endTime: ' ',
-          startDate: ' ',
-          endDate: ' ',
+          endTime: '',
+          startDate: props.start,
+          endDate: props.end,
           comment: ' '
 
         };
@@ -37,10 +40,10 @@ export class Add extends React.Component {
           </div>
           <div class="time">
             <input type="date" id="eventStartDate" name="name" placeholder="od"
-             value={this.state.startDate} onChange={evt => this.updatestartDate(evt)} />
+             value={moment(this.state.startDate).format('YYYY-MM-DD')} onChange={evt => this.updatestartDate(evt)} />
             -
             <input type="date" id="eventEndDate" name="name" placeholder="do"
-            value={this.state.endDate} onChange={evt => this.updateendDate(evt)} />
+            value={moment(this.state.endDate).format('YYYY-MM-DD')} onChange={evt => this.updateendDate(evt)} />
           </div>
 
           <div class="comment">
