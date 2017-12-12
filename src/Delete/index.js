@@ -1,22 +1,22 @@
 import React from 'react';
 import './style.css';
+import {MessageBox} from '../MessageBox';
+import {Button} from '../Button';
 
 export class Delete extends React.Component {
   render() {
     return (
-      <div class="all" >
-
-        <div class='main-class'>
-          <div class='des-class'>
-
-            // <div className = 'button1' onClick={this.send}>
-            //     <div>
-            //       Usuń
-            //     </div>
-            // </div>
+      <MessageBox>
+      <div className="container">
+        <div className="label">
+          Czy chcesz usunąć to wydarzenie?
           </div>
-          </div>
+          <div className="buttoncontainer">
+          <Button link="#main" class ="button1" text=" USUŃ" />
+          <Button link="#main" class ="button1" text="ANULUJ" />
+        </div>
       </div>
+      </MessageBox>
     );
   }
 };

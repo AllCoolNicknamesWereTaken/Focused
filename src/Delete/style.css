@@ -1,0 +1,14 @@
+.buttoncontainer {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  width: 35%;
+  margin:auto;
+}
+.container {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+}

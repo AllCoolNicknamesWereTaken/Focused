@@ -43,6 +43,7 @@ function DeletePage() {
   )
 }
 
+
 class Mainpage extends React.Component {
 
 
@@ -131,7 +132,7 @@ class App extends React.Component {
     );
   }
 }
-
+// <AddEvent start={this.state.start} end={this.state.end} />
 //  const element = <Belt name="Sara" a="hej" b="czesc" />;
   ReactDOM.render(
     <App />,
