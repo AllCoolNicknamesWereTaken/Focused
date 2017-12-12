@@ -47,6 +47,11 @@ export class Calendar extends React.Component {
     window.location.hash = "#add";
     this.props.setDate(slotInfo.start, slotInfo.end);
   }
+  // addEvent(slotInfo) {
+  //   window.location.hash = "#add";
+  //   this.props.setDate(slotInfo.start, slotInfo.end);
+  // }
+
   render() {
     return (
         <div className="CalendarContainer">
