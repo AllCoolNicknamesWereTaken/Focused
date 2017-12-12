@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-export class Calendar extends React.Component {
+export class Delete extends React.Component {
   render() {
     return (
       <div class="all" >

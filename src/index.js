@@ -13,7 +13,7 @@ import {Menu} from './Menu';
 import {Calendar} from './Calendar';
 import {Wyloguj} from './Wyloguj';
 import {Add} from './Add';
-
+import {Delete} from './Delete';
 
 
 function LoginPage() {
@@ -35,9 +35,13 @@ function Registration() {
   )
 }
 
-// BigCalendar.setLocalizer(
-
-// );
+function DeletePage() {
+  return (
+    <div>
+      <Delete />
+    </div>
+  )
+}
 
 class Mainpage extends React.Component {
 
@@ -117,8 +121,9 @@ class App extends React.Component {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
           <Mainpage setDate={this.setDate} /> :
-          this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'? <AddEvent start={this.state.start} end={this.state.end} />:
-          <div>404 /n page not found</div>
+          this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'?
+           <AddEvent start={this.state.start} end={this.state.end} /> : this.state.active_page === 'delete'?
+           <DeletePage /> : <div>404 /n page not found</div>
         }
         </div>
         <Footer />
