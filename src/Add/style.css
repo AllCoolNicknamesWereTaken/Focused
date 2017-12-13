@@ -69,3 +69,11 @@
   background-color: #2A4B54;
   transition: background-color 0s;
 }
+.buttoncontainer {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  width: 35%;
+  margin:auto;
+}

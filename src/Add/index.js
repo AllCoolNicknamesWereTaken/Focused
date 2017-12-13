@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import {Button} from '../Button';
 
 import moment from 'moment';
 
@@ -12,7 +13,7 @@ export class Add extends React.Component {
           endTime: '',
           startDate: props.start,
           endDate: props.end,
-          comment: ' '
+          comment: ''
 
         };
 
@@ -61,14 +62,18 @@ export class Add extends React.Component {
             </div>
             <div class="stars">
             </div>
-          </div>
-          <div className = 'button1' onClick={this.send}>
-              <div>
+            <div className="buttoncontainer">
+            <div className = 'button1' onClick={this.send}>
+                <div>
                 OK
+                </div>
               </div>
+              <Button class = 'button1' link="#main" text="ANULUJ" />
+
+          </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
         );
   }

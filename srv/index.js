@@ -66,7 +66,7 @@ var routes = [{
   method: "DELETE",
   path: "/deleteevents",
   handler: function(request, reply) {
-    var query = "DELETE FROM events WHERE idevents = " + request.payload.id;
+    var query = "DELETE FROM events WHERE idevents = '" + JSON.parse(request.payload).id + "'";
     console.log(query);
     db.query(query, function(err, results) {
       if (err) {
