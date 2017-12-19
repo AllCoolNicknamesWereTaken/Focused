@@ -43,11 +43,7 @@ function DeletePage() {
   )
 }
 
-
 class Mainpage extends React.Component {
-
-
-
   render() {
     return (
       <div className="main-container">
@@ -63,11 +59,6 @@ class Mainpage extends React.Component {
 }
 
 
-
-// function NoteBase() {
-//   return (
-//     // );
-// }
 function AddEvent(props) {
   return (
     <div>
@@ -132,8 +123,6 @@ class App extends React.Component {
     );
   }
 }
-// <AddEvent start={this.state.start} end={this.state.end} />
-//  const element = <Belt name="Sara" a="hej" b="czesc" />;
   ReactDOM.render(
     <App />,
     document.getElementById('root')

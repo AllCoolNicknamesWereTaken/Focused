@@ -19,11 +19,11 @@ export class Calendar extends React.Component {
       events: []
     };
     this.addEvent = this.addEvent.bind(this);
+    this.deleteEvent = this.deleteEvent.bind(this);
   }
 
   componentWillMount() {
     var self = this;
-    console.log("dupa");
     fetch(api_url)
     .then(function(dupa) {
       return dupa.json();
@@ -47,10 +47,13 @@ export class Calendar extends React.Component {
     window.location.hash = "#add";
     this.props.setDate(slotInfo.start, slotInfo.end);
   }
-  // addEvent(slotInfo) {
-  //   window.location.hash = "#add";
-  //   this.props.setDate(slotInfo.start, slotInfo.end);
-  // }
+  deleteEvent(slotInfo) {
+    window.location.hash = "#delete";
+  //  this.props.setDate(slotInfo.start, slotInfo.end);
+  console.log(slotInfo.idevents);
+
+  }
+
 
   render() {
     return (
@@ -59,7 +62,7 @@ export class Calendar extends React.Component {
             events={this.state.events}
             selectable={true}
             onSelectSlot= {this.addEvent}
-            onSelectEvent={this.eventOnClicked}
+            onSelectEvent={this.deleteEvent}
           />
         </div>
 
