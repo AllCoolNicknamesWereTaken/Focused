@@ -45,13 +45,12 @@ export class Calendar extends React.Component {
   }
   addEvent(slotInfo) {
     window.location.hash = "#add";
-    this.props.setDate(slotInfo.start, slotInfo.end);
+    this.props.setDate(slotInfo.start, slotInfo.end); //czyje propsy
   }
   deleteEvent(slotInfo) {
     window.location.hash = "#delete";
-  //  this.props.setDate(slotInfo.start, slotInfo.end);
-  console.log(slotInfo.idevents);
-
+    this.props.setId(slotInfo.idevents);
+    console.log(slotInfo.idevents);
   }
 
 
@@ -61,7 +60,7 @@ export class Calendar extends React.Component {
           <BigCalendar
             events={this.state.events}
             selectable={true}
-            onSelectSlot= {this.addEvent}
+            onSelectSlot={this.addEvent}
             onSelectEvent={this.deleteEvent}
           />
         </div>

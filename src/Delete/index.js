@@ -6,7 +6,7 @@ import {Button} from '../Button';
 export class Delete extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    console.log('a', props);
     this.state = {
 
 
@@ -19,7 +19,7 @@ export class Delete extends React.Component {
       <MessageBox>
       <div className="container">
         <div className="label">
-          Czy chcesz usunąć to wydarzenie?
+          Czy chcesz usunąć wydarzenie o numerze {this.props.id}?
           </div>
           <div className="buttoncontainer">
 
@@ -34,7 +34,7 @@ export class Delete extends React.Component {
 
   remove = function () {
     fetch('http://localhost:8080/deleteevents', { method: 'DELETE', body: JSON.stringify({
-      id:  1
+      id:  this.props.id,
     })
     })
     .then(function() {

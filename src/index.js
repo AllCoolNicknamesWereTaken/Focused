@@ -35,10 +35,10 @@ function Registration() {
   )
 }
 
-function DeletePage() {
+function DeletePage(props) {
   return (
     <div>
-      <Delete />
+      <Delete id={props.id} />
     </div>
   )
 }
@@ -48,7 +48,7 @@ class Mainpage extends React.Component {
     return (
       <div className="main-container">
         <Menu />
-        <Calendar setDate={this.props.setDate} />
+        <Calendar setDate={this.props.setDate} setId={this.props.setId} />
         <div className="right-side">
           <Button text="Wyloguj" class="wyloguj" link="#login" />
           <Button text="Dodaj wydarzenie" class="button1" link="#add" />
@@ -81,7 +81,7 @@ class App extends React.Component {
     };
 
     this.setDate = this.setDate.bind(this);
-
+    this.setId = this.setId.bind(this);
 
     window.addEventListener('hashchange', this.onHashChange.bind(this));
 
@@ -92,6 +92,13 @@ class App extends React.Component {
       end: end
     })
   }
+
+  setId(id) {
+    this.setState({
+      id: id
+    })
+  }
+
 
   componentDidMount() {
       this.onHashChange();
@@ -112,10 +119,10 @@ class App extends React.Component {
         {
           this.state.active_page === 'login' ?
           <LoginPage /> : this.state.active_page === 'main' ?
-          <Mainpage setDate={this.setDate} /> :
+          <Mainpage setDate={this.setDate} setId={this.setId} /> :
           this.state.active_page === 'registration'? <Registration /> :this.state.active_page === 'add'?
            <AddEvent start={this.state.start} end={this.state.end} /> : this.state.active_page === 'delete'?
-           <DeletePage /> : <div>404 /n page not found</div>
+           <DeletePage id={this.state.id} /> : <div>404 /n page not found</div>
         }
         </div>
         <Footer />

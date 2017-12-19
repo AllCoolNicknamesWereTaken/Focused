@@ -119,6 +119,4 @@ export class Add extends React.Component {
         endTime: evt.target.value
       });
     }
-
-
 };
