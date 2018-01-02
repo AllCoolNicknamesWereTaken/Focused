@@ -25,7 +25,7 @@ module.exports = {
       user : "oliwia",
       host : "oliwia.jelocartel.com",
       ref  : "origin/master",
-      repo : "git@github.com:wojtekw92/Focused.git",
+      repo : "https://github.com/wojtekw92/Focused.git",
       path : "/srv/oliwia",
       "post-deploy" : "npm install && pm2 startOrRestart ecosystem.config.js --env production"
     },
