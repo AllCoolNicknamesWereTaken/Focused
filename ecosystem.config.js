@@ -8,7 +8,8 @@ module.exports = {
       name      : "API",
       script    : "srv/index.js",
       env: {
-        COMMON_VARIABLE: "true"
+        COMMON_VARIABLE: "true",
+        PUBLIC_URL: "http://oliwia.jelocartel.com",
       },
       env_production : {
         NODE_ENV: "production"
