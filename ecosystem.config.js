@@ -9,7 +9,6 @@ module.exports = {
       script    : "srv/index.js",
       env: {
         COMMON_VARIABLE: "true",
-        PUBLIC_URL: "http://oliwia.jelocartel.com",
       },
       env_production : {
         NODE_ENV: "production"
@@ -28,7 +27,7 @@ module.exports = {
       ref  : "origin/master",
       repo : "https://github.com/wojtekw92/Focused.git",
       path : "/srv/oliwia",
-      "post-deploy" : "npm install && npm run build && cp ../config.json ./srv/config.json && pm2 startOrRestart ecosystem.config.js --env production"
+      "post-deploy" : "npm install && export PUBLIC_URL=\"http://oliwia.jelocartel.com\" && npm run build && cp ../config.json ./srv/config.json && pm2 startOrRestart ecosystem.config.js --env production"
     },
   }
 }
