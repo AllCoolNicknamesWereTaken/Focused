@@ -6,10 +6,9 @@ import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
 
-const api_url = 'http://localhost:8080/events';
+const api_url = window.location.protocol + '//' + window.location.hostname + ':8080/events';
 
   BigCalendar.momentLocalizer(moment)
-
 
 export class Calendar extends React.Component {
 

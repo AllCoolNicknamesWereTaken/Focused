@@ -28,12 +28,13 @@ export class Add extends React.Component {
       }
 
       send = function () {
-        fetch('http://localhost:8080/addevents', { method: 'POST', body: JSON.stringify({
+        fetch(window.location.protocol + '//' + window.location.hostname + ':8080/addevents', { method: 'POST', body: JSON.stringify({
           title:  this.state.eventName,
           start:  this.state.startDate,
           end:    this.state.endDate
         }) })
         .then(function() {
+
           window.location.hash = '#main';
         });
 

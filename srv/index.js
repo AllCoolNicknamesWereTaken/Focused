@@ -45,6 +45,7 @@ var routes = [{
     method: "POST",
     path: "/addevents",
     handler: function(request, reply) {
+      console.log(request.payload.title);
       var query = "INSERT INTO events (`title`, `start`, `end`, `desc`) VALUES ('"
       + JSON.parse(request.payload).title + "', '"
       + JSON.parse(request.payload).start + "', '"

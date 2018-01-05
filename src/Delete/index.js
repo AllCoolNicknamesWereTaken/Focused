@@ -33,7 +33,7 @@ export class Delete extends React.Component {
   }
 
   remove = function () {
-    fetch('http://localhost:8080/deleteevents', { method: 'DELETE', body: JSON.stringify({
+    fetch(window.location.protocol + '//' + window.location.hostname + ':8080/deleteevents', { method: 'DELETE', body: JSON.stringify({
       id:  this.props.id,
     })
     })
