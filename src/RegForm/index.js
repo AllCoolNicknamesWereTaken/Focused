@@ -1,5 +1,4 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
 
 export function RegForm(props) {
   return (

@@ -10,7 +10,7 @@ export function Menu() {
         <li className="Kalendarz">
           <a href="index.html">Kalendarz</a>
         </li>
-        <li class="Base">
+        <li className="Base">
           <a href="szkolenia.html">Moje bazy danych</a>
             <ul className="RozwijalnePar">
               <li className="Rozwijalne">

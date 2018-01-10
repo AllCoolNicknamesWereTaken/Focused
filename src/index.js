@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {Helmet} from "react-helmet";
 import {Belt} from './Belt';
 import {Footer} from './Footer';
 import {Head} from './Head';
@@ -11,7 +10,6 @@ import {Form} from './Form';
 import {RegForm} from './RegForm';
 import {Menu} from './Menu';
 import {Calendar} from './Calendar';
-import {Wyloguj} from './Wyloguj';
 import {Add} from './Add';
 import {Delete} from './Delete';
 
@@ -20,8 +18,9 @@ function LoginPage() {
   return (
     <div>
       <Form />
-      <Button text="zaloguj" class="button1" link="#main" />
-      <Button text="Zarejestruj sie" class="button2" link="#registration" />
+      <Button text="zaloguj" buttonClass="button1" link="#main" />
+      <Button text="Zarejestruj sie" buttonClass="button2" link="#registration" />
+      <a href="http://localhost:8080/authfacebook"><img alt="" src="http://i.stack.imgur.com/pZzc4.png" /></a>
     </div>
   )
 }
@@ -30,7 +29,7 @@ function Registration() {
   return (
     <div>
       <RegForm />
-      <Button text="Zarejestruj sie" class="button2" link="#registration" />
+      <Button text="Zarejestruj sie" buttonClass="button2" link="#registration" />
     </div>
   )
 }
@@ -50,8 +49,8 @@ class Mainpage extends React.Component {
         <Menu />
         <Calendar setDate={this.props.setDate} setId={this.props.setId} />
         <div className="right-side">
-          <Button text="Wyloguj" class="wyloguj" link="#login" />
-          <Button text="Dodaj wydarzenie" class="button1" link="#add" />
+          <Button text="Wyloguj" buttonClass="wyloguj" link="#login" />
+          <Button text="Dodaj wydarzenie" buttonClass="button1" link="#add" />
         </div>
       </div>
     )

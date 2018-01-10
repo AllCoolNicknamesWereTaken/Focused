@@ -1,7 +1,8 @@
-
 var config = require('./config.json');
 var Hapi = require("hapi");
 var DB = require("mysql");
+
+var facebookAuth = require('hapi-auth-facebook');
 
 var db = DB.createConnection({
   host      : config.DB.host,
@@ -94,6 +95,23 @@ var server = new Hapi.Server({
 
 server.connection({
   port: 8080,
+  host: 'localhost'
+});
+
+
+var facebookAuthRequestUrl = '/authfacebook';
+
+server.register({
+  register: facebookAuth,
+  options: {
+    handler: function(request, reply, accessToken) {
+      reply(`<script>location = 'http://localhost:3000/?token=${accessToken}#main';</script>`);
+    },
+    redirectUri: '/zalogowalem',
+    tokenRequestPath: facebookAuthRequestUrl
+  }
+}, function (err) {
+  console.log(err);
 });
 
 routes.forEach(function(route) {

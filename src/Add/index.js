@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 import {Button} from '../Button';
 
-import moment from 'moment';
 
 export class Add extends React.Component {
       constructor(props) {
@@ -79,23 +78,23 @@ export class Add extends React.Component {
     render = function() {
     return (
 
-    <div class="all" >
+    <div className="all" >
 
-      <div class='main-class'>
-        <div class='des-class'>
-          <div class="name">
+      <div className='main-className'>
+        <div className='des-class'>
+          <div className="nam">
             <input type="text" id="name" name="name" placeholder="Nazwa wydarzenia"
             value={this.state.eventName} onChange={evt => this.updateeventName(evt)} />
           </div>
 
-          <div class="time">
+          <div className="time">
             <input type="time" id="eventStartTime" name="name" placeholder="Godzina rozpoczęcia"
             value={this.state.startTime} onChange={this.updatestartTime} />
             -
             <input type="time" id="eventEndTime" name="name" placeholder="godzina zakończenia"
             value={this.state.endTime} onChange={this.updateendTime} />
           </div>
-          <div class="time">
+          <div className="time">
             <input type="date" id="eventStartDate" name="name" placeholder="od"
              value={this.state.startDate} onChange={this.updatestartDate} />
             -
@@ -103,20 +102,20 @@ export class Add extends React.Component {
             value={this.state.endDate} onChange={this.updateendDate} />
           </div>
 
-          <div class="comment">
+          <div className="comment">
             <textarea rows="10" cols="50" id="content" name="content"
             value={this.state.comment} onChange={this.updatecomment} ></textarea>
           </div>
-          <div class="importance">
-            <div class="stars">
+          <div className="importance">
+            <div className="stars">
             </div>
-            <div class="stars">
+            <div className="stars">
             </div>
-            <div class="stars">
+            <div className="stars">
             </div>
-            <div class="stars">
+            <div className="stars">
             </div>
-            <div class="stars">
+            <div className="stars">
             </div>
             <div className="buttoncontainer">
             <div className = 'button1' onClick={this.send}>
@@ -124,7 +123,7 @@ export class Add extends React.Component {
                 OK
                 </div>
               </div>
-              <Button class = 'button1' link="#main" text="ANULUJ" />
+              <Button className = 'button1' link="#main" text="ANULUJ" />
 
           </div>
           </div>

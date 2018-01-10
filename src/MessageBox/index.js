@@ -4,10 +4,10 @@ import './style.css';
 export class MessageBox extends React.Component {
   render() {
     return (
-      <div class="all" >
+      <div className="all" >
 
-        <div class='main-class'>
-          <div class='des-class'>
+        <div classNameName='main-class'>
+          <div className='des-class'>
           {this.props.children}
 
           </div>

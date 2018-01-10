@@ -3,7 +3,7 @@ import './style.css';
 
 export function Button(props) {
   return (
-    <div className = {props.class} onClick = {props.click}>
+    <div className = {props.buttonClass} onClick = {props.click}>
       <a href = {props.link} className='a'>
         <div>
           {props.text}
