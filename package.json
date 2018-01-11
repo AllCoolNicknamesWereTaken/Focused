@@ -30,7 +30,8 @@
     "react": "^16.1.0",
     "react-big-calendar": "^0.17.0",
     "react-dom": "^16.1.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "request-promise-native": "^1.0.5"
   },
   "devDependencies": {
     "react-scripts": "^1.0.17"

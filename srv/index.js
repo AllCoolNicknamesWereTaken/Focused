@@ -3,6 +3,7 @@ var Hapi = require("hapi");
 var DB = require("mysql");
 
 var facebookAuth = require('hapi-auth-facebook');
+var Request = require('request-promise-native');
 
 var db = DB.createConnection({
   host      : config.DB.host,
@@ -105,7 +106,37 @@ server.register({
   register: facebookAuth,
   options: {
     handler: function(request, reply, accessToken) {
-      reply(`<script>location = 'http://localhost:3000/?token=${accessToken}#main';</script>`);
+      Request.get('https://graph.facebook.com/me?&access_token=' + accessToken)
+      .then(function(user) {
+        console.log(user);
+        user = JSON.parse(user);
+        Request.get('https://graph.facebook.com/' + user.id + '/events?access_token=' + accessToken)
+        .then(function(events) {
+          console.log("eventy to : " + events + "token " + accessToken);
+        });
+        db.query("SELECT * FROM users WHERE facebookid= '" + user.id + "'" , function(err, results) {
+          if (err) {
+            console.log("errory EJ errory!" + err )
+            return;
+          }
+          if(results == "") {
+            console.log("puste");
+            var query = "INSERT INTO users (`facebookid`, `name`) VALUES ('" + user.id + "','" + user.name + "')";
+
+              console.log(query);
+              db.query(query, function(err, results) {
+                if (err) {
+                  console.log("errory w insercie 2222  ", err);
+                  return;
+                }
+
+              });
+          }
+          return;
+        });
+        reply(`<script>location = 'http://localhost:3000/#main';</script>`);
+      });
+
     },
     redirectUri: '/zalogowalem',
     tokenRequestPath: facebookAuthRequestUrl

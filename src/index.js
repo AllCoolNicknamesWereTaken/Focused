@@ -12,15 +12,13 @@ import {Menu} from './Menu';
 import {Calendar} from './Calendar';
 import {Add} from './Add';
 import {Delete} from './Delete';
-
+import {FbButton} from './FbButton';
 
 function LoginPage() {
   return (
     <div>
       <Form />
-      <Button text="zaloguj" buttonClass="button1" link="#main" />
-      <Button text="Zarejestruj sie" buttonClass="button2" link="#registration" />
-      <a href="http://localhost:8080/authfacebook"><img alt="" src="http://i.stack.imgur.com/pZzc4.png" /></a>
+    <FbButton />
     </div>
   )
 }
