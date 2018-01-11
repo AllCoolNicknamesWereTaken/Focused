@@ -8,7 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "node srv"
+    "server": "node srv",
+    "server-dev": "node srv DEBUG"
   },
   "repository": {
     "type": "git",

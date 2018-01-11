@@ -2,6 +2,10 @@ var config = require('./config.json');
 var Hapi = require("hapi");
 var DB = require("mysql");
 
+var isDebug  = process.argv.pop() === 'DEBUG';
+
+console.log('isDebug?', isDebug);
+
 var facebookAuth = require('hapi-auth-facebook');
 var Request = require('request-promise-native');
 
@@ -94,10 +98,14 @@ var server = new Hapi.Server({
   }
 });
 
-server.connection({
-  port: 8080,
-  host: 'localhost'
-});
+var serverConfig = {
+  port: 8080
+};
+
+if (isDebug) {
+  serverConfig.host = 'localhost';
+}
+server.connection(serverConfig);
 
 
 var facebookAuthRequestUrl = '/authfacebook';
@@ -134,7 +142,7 @@ server.register({
           }
           return;
         });
-        reply(`<script>location = 'http://localhost:3000/#main';</script>`);
+        reply(`<script>location = 'http://${isDebug ? 'localhost:3000' : 'oliwia.jelocartel.com'}/#main';</script>`);
       });
 
     },
