@@ -104,6 +104,8 @@ var serverConfig = {
 
 if (isDebug) {
   serverConfig.host = 'localhost';
+} else {
+  serverConfig.host = 'oliwia.jelocartel.com';
 }
 server.connection(serverConfig);
 
