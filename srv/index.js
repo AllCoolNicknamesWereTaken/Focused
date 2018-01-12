@@ -150,7 +150,7 @@ server.register({
       });
 
     },
-    redirectUri: '/zalogowalem',
+    redirectUri: '/',
     tokenRequestPath: facebookAuthRequestUrl
   }
 }, function (err) {
