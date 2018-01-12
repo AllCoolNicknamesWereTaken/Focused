@@ -150,7 +150,7 @@ server.register({
       });
 
     },
-    redirectUri: '/',
+    redirectUri: '',
     tokenRequestPath: facebookAuthRequestUrl
   }
 }, function (err) {
