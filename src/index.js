@@ -18,7 +18,8 @@ function LoginPage() {
   return (
     <div>
       <Form />
-    <FbButton />
+      <FbButton link="#main" />
+
     </div>
   )
 }

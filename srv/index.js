@@ -142,7 +142,9 @@ server.register({
           }
           return;
         });
+        console.log(`<script>location = 'http://${isDebug ? 'localhost:3000' : 'oliwia.jelocartel.com'}/#main';</script>`);
         reply(`<script>location = 'http://${isDebug ? 'localhost:3000' : 'oliwia.jelocartel.com'}/#main';</script>`);
+
       });
 
     },
