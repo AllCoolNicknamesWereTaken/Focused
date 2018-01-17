@@ -13,12 +13,16 @@ import {Calendar} from './Calendar';
 import {Add} from './Add';
 import {Delete} from './Delete';
 import {FbButton} from './FbButton';
+import {FbPass} from './FbPass';
+import {Photo} from './Photo';
+
 
 function LoginPage() {
   return (
     <div>
       <Form />
       <FbButton link="#main" />
+
 
     </div>
   )
@@ -36,6 +40,7 @@ function Registration() {
 function DeletePage(props) {
   return (
     <div>
+
       <Delete id={props.id} />
     </div>
   )
@@ -44,13 +49,18 @@ function DeletePage(props) {
 class Mainpage extends React.Component {
   render() {
     return (
+      <div>
+
       <div className="main-container">
+
         <Menu />
         <Calendar setDate={this.props.setDate} setId={this.props.setId} />
         <div className="right-side">
+          <Photo />
           <Button text="Wyloguj" buttonClass="wyloguj" link="#login" />
           <Button text="Dodaj wydarzenie" buttonClass="button1" link="#add" />
         </div>
+      </div>
       </div>
     )
   }
@@ -60,7 +70,6 @@ class Mainpage extends React.Component {
 function AddEvent(props) {
   return (
     <div>
-
       <Mainpage />
       <Add start={props.start} end={props.end} />
     </div>
@@ -128,7 +137,26 @@ class App extends React.Component {
     );
   }
 }
-  ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-  );
+
+window.fbAsyncInit = function() {
+  window.FB.init({
+    appId      : '776635205873005',
+    xfbml      : true,
+    version    : 'v2.11'
+  });
+  window.FB.AppEvents.logPageView();
+
+  window.FB.login((resp) => {
+    window.location.hash = "#main";
+
+    console.log('MOJ ACCESS TOKEN', resp);
+    window.fb_data = resp;
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    );
+  });
+
+
+};
