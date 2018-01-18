@@ -30,7 +30,8 @@ export class Add extends React.Component {
         fetch(window.location.protocol + '//' + window.location.hostname + ':8080/addevents', { method: 'POST', body: JSON.stringify({
           title:  this.state.eventName,
           start:  this.state.startDate,
-          end:    this.state.endDate
+          end:    this.state.endDate,
+					user: window.fb_data.authResponse.userID
         }) })
         .then(function() {
 
