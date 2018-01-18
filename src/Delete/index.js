@@ -23,9 +23,9 @@ export class Delete extends React.Component {
           </div>
           <div className="buttoncontainer">
 
-          <Button link="#main" class ="button1" text=" USUŃ" click={this.remove} />
+          <Button link="#main" buttonClass ="button1" text=" USUŃ" click={this.remove} />
 
-          <Button link="#main" class ="button1" text="ANULUJ" />
+          <Button link="#main" buttonClass ="button1" text="ANULUJ" />
         </div>
       </div>
       </MessageBox>

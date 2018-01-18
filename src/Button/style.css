@@ -65,7 +65,45 @@
     font-size: 18px;
     /*margin-top: 0.3%;*/
     /*margin-right: 9%;*/
-    padding: 0;
+
+    /*width: 30%;*/
+    margin-left: 1%;
+}
+
+.wyloguj:active {
+  background-color: #7D7772;
+}
+
+.wyloguj {
+  margin:auto;
+  text-align: center;
+  border: solid #36859B 4px;
+  padding-right:  8px;
+  padding-left: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 1%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+  text-decoration: none;
+}
+
+.wyloguj:hover {
+  background-color: #B9B2AC;
+}
+
+.wyloguj {
+    border-color: #9F9993;
+    background-color: #9F9993;
+    color: white;
+    /*float:left;*/
+    /*text-align: center;*/
+    font-size: 18px;
+    /*margin-top: 0.3%;*/
+    /*margin-right: 9%;*/
     /*width: 30%;*/
     margin-left: 1%;
 }

@@ -5,6 +5,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
+
 const api_url = window.location.protocol + '//' + window.location.hostname + ':8080/events';
 
   BigCalendar.momentLocalizer(moment)
@@ -14,9 +15,8 @@ export class Calendar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: [],
-      avatar: `http://graph.facebook.com/${window.fb_data.authResponse.userID}/picture`
-    };
+      events: []
+      };
     this.addEvent = this.addEvent.bind(this);
     this.deleteEvent = this.deleteEvent.bind(this);
   }
@@ -73,7 +73,6 @@ export class Calendar extends React.Component {
   render() {
     return (
         <div className="CalendarContainer">
-        <img src={this.state.avatar} />
           <BigCalendar
             events={this.state.events}
             selectable={true}

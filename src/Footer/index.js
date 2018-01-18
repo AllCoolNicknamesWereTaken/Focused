@@ -13,6 +13,7 @@ export function Footer(props) {
       <div className="footerObj">
         oliwia_bar@wp.pl
       </div>
+
     </div>
     );
 };

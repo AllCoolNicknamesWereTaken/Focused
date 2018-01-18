@@ -7,8 +7,8 @@
 
 .des-class {
   opacity: 1;
-  width: 50%;
-  height: 50%;
+  width: 700px;
+  height: 400px;
   border: solid #FFB974 10px;
   border-radius: 10px;
   background-color: #FFB974;
@@ -31,11 +31,13 @@
   /*opacity: 0.2;*/
   /*margin-top: 10%;*/
   align-content: center;
+
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
   justify-content: center;
+  display: flex;
 }
 .button1, .button2 {
   margin:auto;
@@ -76,4 +78,8 @@
   justify-content: center;
   width: 35%;
   margin:auto;
+}
+.all {
+  /* display: flex; */
+
 }

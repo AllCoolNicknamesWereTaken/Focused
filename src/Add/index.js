@@ -124,7 +124,7 @@ export class Add extends React.Component {
                 OK
                 </div>
               </div>
-              <Button className = 'button1' link="#main" text="ANULUJ" />
+              <Button buttonClass="wyloguj" link="#main" text="ANULUJ" />
 
           </div>
           </div>

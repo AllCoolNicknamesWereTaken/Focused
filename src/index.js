@@ -90,6 +90,7 @@ class App extends React.Component {
     this.setDate = this.setDate.bind(this);
     this.setId = this.setId.bind(this);
 
+
     window.addEventListener('hashchange', this.onHashChange.bind(this));
 
   }
