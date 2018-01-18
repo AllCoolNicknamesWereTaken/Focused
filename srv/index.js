@@ -4,7 +4,7 @@ var DB = require("mysql");
 
 var isDebug  = process.argv.pop() === 'DEBUG';
 
-console.log('isDebug?', isDebug);
+console.log('Działam w trybie', isDebug ? 'DEBUG' : 'PRODUCTION');
 
 var facebookAuth = require('hapi-auth-facebook');
 var Request = require('request-promise-native');
@@ -18,71 +18,119 @@ var db = DB.createConnection({
 });
 db.connect();
 
+const getUserId = function(externalId, name) {
+	return new Promise((resolve, reject) => {
+		db.query('SELECT id FROM users WHERE `facebookid` = "' + externalId + '"', function(err, results) {
+			if (err) {
+				reject({
+					status: 'error',
+					error: err
+				});
+			} else {
+				if (results.length) {
+					resolve(results[0].id);
+				} else {
+					console.log("Tworze nowego usera");
+					var query = "INSERT INTO users (`facebookid`) VALUES ('" + externalId + "')";
+					db.query(query, function(err, results) {
+						if (err) {
+							reject({
+								status: 'error',
+								error: err
+							})
+						} else {
+							console.log("Będzie miał ID:", results.insertId);
+							resolve(results.insertId);
+						}
+					});
+				}
+			}
+		});
+	});
+};
+
 var routes = [{
-  method: "GET",
+  method: "POST",
   path: "/events",
   handler: function(request, reply) {
-    db.query("SELECT * FROM events", function(err, results) {
-      if (err) {
-        reply({
-          status: 'error',
-          error: err
-        });
-        return;
-      }
-      console.log(results);
-      reply({
-        status: 'ok',
-        data: results
-      })
-    });
-    // reply({
-    // });
-  }
-}, {
-  method: "GET",
-  path: "/oliwka",
-  handler: function(request, reply) {
-    reply({
-      title: 'KOCHAM Cie'
-    })
+		console.log("Będę ładować eventy");
+		getUserId(JSON.parse(request.payload).user).then((userId) => {
+			console.log("Ładuję eventy dla użytkownika", userId);
+			db.query("SELECT * FROM Focused.events "
+			 + "LEFT JOIN Focused.user_events "
+			 + "ON user_events.id_events = events.idevents "
+    	 + "WHERE user_events.id_user = " + userId, function(err, results) {
+				if (err) {
+					reply({
+						status: 'error',
+						error: err
+					});
+					return;
+				}
+				reply({
+					status: 'ok',
+					data: results
+				})
+			});
+		}).catch(console.error);
   }
 }, {
     method: "POST",
     path: "/addevents",
     handler: function(request, reply) {
-      console.log(request.payload.title);
-      var query = "INSERT INTO events (`title`, `start`, `end`, `desc`) VALUES ('"
-      + JSON.parse(request.payload).title + "', '"
-      + JSON.parse(request.payload).start + "', '"
-      + JSON.parse(request.payload).end + "', '"
-      + JSON.parse(request.payload).desc
-      + "')";
-      console.log(query);
-      db.query(query, function(err, results) {
-        if (err) {
-          console.log(err);
-          return;
-        }
-        reply({
-          status: 'ok'
-        })
-      });
+			console.log("Będę dodawać event");
+			getUserId(JSON.parse(request.payload).user).then((userId) => {
+				console.log("Dodaję event dla użytkownika", userId);
+				var query = "INSERT INTO events (`title`, `start`, `end`, `desc`) VALUES ('"
+				+ JSON.parse(request.payload).title + "', '"
+				+ JSON.parse(request.payload).start + "', '"
+				+ JSON.parse(request.payload).end + "', '"
+				+ JSON.parse(request.payload).desc
+				+ "')";
+				db.query(query, function(err, results) {
+					if (err) {
+						console.log(err);
+						return;
+					}
+
+					console.log("Dodałem event o ID:", results.insertId);
+					db.query(
+						"INSERT INTO user_events (`id_user`, `id_events`) "
+						+ "VALUES ('" + userId + "', '" + results.insertId + "')", function(err, result) {
+							if (err) {
+								console.log(err);
+								return;
+							}
+
+							reply({
+								status: 'ok'
+							})
+						});
+				});
+			});
   }
 }, {
   method: "DELETE",
   path: "/deleteevents",
   handler: function(request, reply) {
     var query = "DELETE FROM events WHERE idevents = '" + JSON.parse(request.payload).id + "'";
-    console.log(query);
+    console.log("Usuwam event", JSON.parse(request.payload).id );
     db.query(query, function(err, results) {
       if (err) {
         console.log(err);
         return;
       }
-      reply({
-        status: 'ok'
-      })
+
+			var query = "DELETE FROM user_events WHERE id_events = '" + JSON.parse(request.payload).id + "'";
+			db.query(query, function(err, results) {
+	      if (err) {
+	        console.log(err);
+	        return;
+	      }
+	      reply({
+	        status: 'ok'
+	      });
+			});
     });
   }
 }

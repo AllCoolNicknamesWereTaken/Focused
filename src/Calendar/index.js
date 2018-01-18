@@ -5,8 +5,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 
-console.log('KURWAAAA', window.FB);
-
 const api_url = window.location.protocol + '//' + window.location.hostname + ':8080/events';
 
   BigCalendar.momentLocalizer(moment)
@@ -37,7 +35,12 @@ export class Calendar extends React.Component {
 );
 
     var self = this;
-    fetch(api_url)
+    fetch(api_url, {
+			method: 'POST',
+			body: JSON.stringify({
+				user: window.fb_data.authResponse.userID
+			})
+		})
     .then(function(dupa) {
       return dupa.json();
     })
