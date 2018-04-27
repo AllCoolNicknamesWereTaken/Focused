@@ -1,4 +1,4 @@
-
+/* global FB */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -57,7 +57,12 @@ class Mainpage extends React.Component {
         <Calendar setDate={this.props.setDate} setId={this.props.setId} />
         <div className="right-side">
           <Photo />
+          <div onClick={FB.logout(function(response) {
+  // user is now logged out
+              })}>
           <Button text="Wyloguj" buttonClass="wyloguj" link="#login" />
+
+          </div>
           <Button text="Dodaj wydarzenie" buttonClass="button1" link="#add" />
         </div>
       </div>
