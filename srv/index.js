@@ -190,8 +190,6 @@ server.register({
 
               });
           }
-
-          console.log('dupa');
           return;
         });
         console.log(`<script>location = 'http://${isDebug ? 'localhost:3000' : 'oliwia.jelocartel.com'}/#main';</script>`);

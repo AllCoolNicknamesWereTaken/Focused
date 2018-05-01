@@ -29,7 +29,7 @@ export class Photo extends React.Component {
   render() {
     return (
       <div className="RowContener">
-        <img width="50" height="50" src={this.state.avatar} className="photo" />
+        <img width="50" height="50" src={this.state.avatar} className="photo" alt="user avatar"/>
         <p className="name">{this.state.name}</p>
       </div>
     );

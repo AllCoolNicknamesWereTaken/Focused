@@ -1,13 +1,23 @@
 import React from 'react';
 import './style.css';
 
-export function FbButton(props) {
-  var apiAddress = window.location.protocol + '//' + window.location.hostname + ':8080/authfacebook';
-  return (
-    <a href={apiAddress}>
-    <button class="loginBtn loginBtn--facebook" >
-      Zaloguj przez Facebook
-    </button>
-    </a>
-  );
+export class FbButton extends React.Component {
+  loginAction() {
+    window.FB.login((resp) => {
+      window.location.hash = "#main";
+
+      console.log('MOJ ACCESS TOKEN', resp);
+      window.fb_data = resp;
+    });
+  }
+
+  render() {
+    return (
+      <button className="loginBtn loginBtn--facebook" onClick={() => {
+        this.loginAction();
+      }}>
+        Zaloguj przez Facebook
+      </button>
+    );
+  }
 };

@@ -30,6 +30,8 @@ export class Calendar extends React.Component {
       console.log(response);
       if (response && !response.error) {
         console.log('probaeventow' + JSON.stringify(response));
+      } else if (response.error) {
+        window.location.hash = '#login';
       }
     }
 );

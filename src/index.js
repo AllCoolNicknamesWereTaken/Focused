@@ -13,7 +13,6 @@ import {Calendar} from './Calendar';
 import {Add} from './Add';
 import {Delete} from './Delete';
 import {FbButton} from './FbButton';
-import {FbPass} from './FbPass';
 import {Photo} from './Photo';
 
 
@@ -47,6 +46,10 @@ function DeletePage(props) {
 }
 
 class Mainpage extends React.Component {
+
+  componentDidMount() {
+  }
+
   render() {
     return (
       <div>
@@ -57,10 +60,16 @@ class Mainpage extends React.Component {
         <Calendar setDate={this.props.setDate} setId={this.props.setId} />
         <div className="right-side">
           <Photo />
-          <div onClick={FB.logout(function(response) {
-  // user is now logged out
-              })}>
-          <Button text="Wyloguj" buttonClass="wyloguj" link="#login" />
+          <div onClick={() => {
+            FB.logout(function(response) {
+              //console.log(response);
+            })}
+          }>
+          <Button text="Wyloguj" buttonClass="wyloguj" link="#login" onClick={() => {
+            FB.logout(function(response) {
+              //console.log(response);
+            })}
+          }/>
 
           </div>
           <Button text="Dodaj wydarzenie" buttonClass="button1" link="#add" />
@@ -118,6 +127,13 @@ class App extends React.Component {
   }
 
   onHashChange() {
+    if (!window.fb_data.authResponse) {
+      if (window.location.hash !== '#login') {
+        window.location.hash = '#login';
+      }
+
+      return;
+    }
     const state = this.state;
     state.active_page = window.location.hash ? window.location.hash.toString().slice(1) : this.state.active_page;
     this.setState(state);
@@ -152,17 +168,12 @@ window.fbAsyncInit = function() {
   });
   window.FB.AppEvents.logPageView();
 
-  window.FB.login((resp) => {
-    window.location.hash = "#main";
+  window.fb_data = {
+    // authResponse: {}
+  };
 
-    console.log('MOJ ACCESS TOKEN', resp);
-    window.fb_data = resp;
-
-    ReactDOM.render(
-      <App />,
-      document.getElementById('root')
-    );
-  });
-
-
+  ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+  );
 };
